@@ -33,7 +33,7 @@ apply plugin: 'idea'
 sourceCompatibility = 1.8
 
 dependencies {
-    def VERSION_ENUM_MAPPER = '1.0.0'
+    def VERSION_ENUM_MAPPER = '1.0.1'
     compile  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
     apt "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
 

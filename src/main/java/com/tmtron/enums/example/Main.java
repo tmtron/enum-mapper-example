@@ -1,10 +1,8 @@
 package com.tmtron.enums.example;
 
-// this project only includes tests
-// TODO: reactivate when issue #1 is fixed: https://github.com/tmtron/enum-mapper/issues/1
-//@EnumMappers({Main.ColorEnum.class, Main.BoolEnum.class})
-public class Main {
-    enum BoolEnum {OFF, ON}
+import com.tmtron.enums.EnumMappers;
 
-    enum ColorEnum {RED, BLUE}
+// this project only includes tests
+@EnumMappers({ColorEnum.class, BoolEnum.class})
+public class Main {
 }
