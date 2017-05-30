@@ -17,6 +17,7 @@ buildscript {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
 /*    maven {
         url "http://dl.bintray.com/tmtron/maven"
@@ -34,7 +35,7 @@ apply plugin: 'idea'
 sourceCompatibility = 1.8
 
 dependencies {
-    def VERSION_ENUM_MAPPER = '1.0.1' // check for newer versions here: https://goo.gl/LSP1fv
+    def VERSION_ENUM_MAPPER = '1.0.2' // check for newer versions here: https://goo.gl/LSP1fv
     compile  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
     apt "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
 
