@@ -1,6 +1,5 @@
 
-[![Build Status](https://travis-ci.org/tmtron/enum-mapper-example.svg?label=travis)]
-(https://travis-ci.org/tmtron/enum-mapper-example/builds)
+[![Build Status](https://travis-ci.org/tmtron/enum-mapper-example.svg?label=travis)](https://travis-ci.org/tmtron/enum-mapper-example/builds)
 
 # enum-mapper-example
 Shows how to use https://github.com/tmtron/enum-mapper
