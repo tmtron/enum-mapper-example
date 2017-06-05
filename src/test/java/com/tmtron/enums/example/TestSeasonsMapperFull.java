@@ -63,4 +63,35 @@ public class TestSeasonsMapperFull {
         Assert.assertEquals(Integer.valueOf(4), seasonNumbers.getValue(WINTER));
     }
 
+    /**
+     * @since V1.0.3
+     */
+    @Test
+    public void testIsEnumMapped() {
+        for (Seasons seasonNumber : Seasons.values()) {
+            Assert.assertTrue(seasonNumbers.isEnumMapped(seasonNumber));
+        }
+    }
+
+    /**
+     * @since V1.0.3
+     */
+    @Test
+    public void testIsValueMapped() {
+        Assert.assertTrue(seasonNumbers.isValueMapped(1));
+        Assert.assertTrue(seasonNumbers.isValueMapped(2));
+        Assert.assertTrue(seasonNumbers.isValueMapped(3));
+        Assert.assertTrue(seasonNumbers.isValueMapped(4));
+    }
+
+    /**
+     * @since V1.0.3
+     */
+    @Test
+    public void testIsValueMapped_returns_false() {
+        Assert.assertFalse(seasonNumbers.isValueMapped(-1));
+        Assert.assertFalse(seasonNumbers.isValueMapped(0));
+        Assert.assertFalse(seasonNumbers.isValueMapped(5));
+    }
+
 }
