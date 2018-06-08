@@ -12,8 +12,25 @@ buildscript {
      *   build/generated/source/apt/main/com/tmtron/...
      * (instead of: build/classes/...)
      */
-        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.15"
     }
+}
+
+plugins {
+    /* this plugin can check for newer versions of the used dependencies.
+     * run it from the command line like this:
+     * ./gradlew dependencyUpdates
+     * see also: https://github.com/ben-manes/gradle-versions-plugin
+     *
+     * in Android Studio open the gradle projects view and start
+     * Tasks - help - dependencyUpdates
+     *
+     * alternative:
+     * IntelliJ: Analyze - Inspect code
+     *   the results in the Inspection view will contain dependencies that can be updated
+     *   Android>Lint>Correctness>Obsolete Gradle Dependency
+     */
+    id 'com.github.ben-manes.versions' version '0.17.0'
 }
 
 repositories {
@@ -36,8 +53,8 @@ sourceCompatibility = 1.8
 
 dependencies {
     final VERSION_ENUM_MAPPER = '1.0.3' // check for newer versions here: https://goo.gl/LSP1fv
-    compile  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
-    apt "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
+    implementation  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
+    annotationProcessor "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
