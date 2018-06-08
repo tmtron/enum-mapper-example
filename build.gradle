@@ -31,11 +31,13 @@ plugins {
      *   Android>Lint>Correctness>Obsolete Gradle Dependency
      */
     id 'com.github.ben-manes.versions' version '0.17.0'
+    id "net.ltgt.apt-idea" version "0.15"
 }
 
 repositories {
     jcenter()
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 /*    maven {
         url "http://dl.bintray.com/tmtron/maven"
     }
@@ -46,15 +48,21 @@ group 'com.tmtron.enums'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-apply plugin: "net.ltgt.apt"
-apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
 dependencies {
-    final VERSION_ENUM_MAPPER = '1.0.3' // check for newer versions here: https://goo.gl/LSP1fv
-    implementation  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
-    annotationProcessor "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
+    final USE_JITPACK = true
+
+    if (USE_JITPACK) {
+        final VERSION_ENUM_MAPPER = '-SNAPSHOT'
+        implementation "com.github.tmtron.enum-mapper:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
+        annotationProcessor  "com.github.tmtron.enum-mapper:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
+    } else {
+        final VERSION_ENUM_MAPPER = '1.0.3' // check for newer versions here: https://goo.gl/LSP1fv
+        implementation  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
+        annotationProcessor "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
+    }
 
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }

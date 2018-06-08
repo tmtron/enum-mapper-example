@@ -1,17 +1,16 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="enums-example [clean build]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="enum-mapper-example [check --refresh-dependencies] " type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="--warning-mode=all" />
+      <option name="scriptParameters" value="--refresh-dependencies " />
       <option name="taskDescriptions">
         <list />
       </option>
       <option name="taskNames">
         <list>
-          <option value="clean" />
-          <option value="build" />
+          <option value="check" />
         </list>
       </option>
       <option name="vmOptions" value="" />
