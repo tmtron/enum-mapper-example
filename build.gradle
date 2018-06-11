@@ -52,14 +52,14 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 dependencies {
-    final USE_JITPACK = true
+    final USE_JITPACK = false
 
     if (USE_JITPACK) {
         final VERSION_ENUM_MAPPER = '-SNAPSHOT'
         implementation "com.github.tmtron.enum-mapper:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
         annotationProcessor  "com.github.tmtron.enum-mapper:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
     } else {
-        final VERSION_ENUM_MAPPER = '1.0.3' // check for newer versions here: https://goo.gl/LSP1fv
+        final VERSION_ENUM_MAPPER = '1.0.4' // check for newer versions here: https://goo.gl/LSP1fv
         implementation  "com.tmtron.enums:enum-mapper-lib:${VERSION_ENUM_MAPPER}"
         annotationProcessor "com.tmtron.enums:enum-mapper-processor:${VERSION_ENUM_MAPPER}"
     }
